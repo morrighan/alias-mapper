@@ -1,0 +1,34 @@
+{
+    "name": "@epicinium/cognomen",
+    "version": "1.0.0-beta.0",
+    "description": "A resolver in order to shorten deeply nested relative path expression.",
+    "homepage": "https://github.com/epicinium/cognomen",
+    "bugs": {
+        "url": "https://github.com/epicinium/cognomen/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Yongbin Min",
+        "email": "contact@cichol.com"
+    },
+    "main": "releases/index.js",
+    "directories": {
+        "lib": "releases",
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epicinium/cognomen.git"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {},
+    "engines": {
+        "node": "^8.12.0 || ^10.12.0",
+        "npm": "^6.4.1"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    }
+}
