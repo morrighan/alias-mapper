@@ -1,0 +1,8 @@
+# Dependency directory
+node_modules
+
+# Released contents
+releases
+
+# Testing fixtures
+tests/examples
