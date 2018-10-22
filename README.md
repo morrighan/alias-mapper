@@ -25,7 +25,7 @@ In monorepo structure or complex directory hierarchy, we used to exhausted by de
 
 -   [**`babel-plugin-module-resolver`**](https://www.npmjs.com/package/babel-plugin-module-resolver)<br />It has a risk of name collision with existing modules by indirect deep dependencies. because it allows using any name as an alias.
 -   [**`babel-plugin-root-import`**](https://www.npmjs.com/package/babel-plugin-root-import)<br />It allows only one character as an alias name. (e.g. `~` is allowed, but `~~` is not)
-    -   [**`eslint-import-resolver-babel-plugin-root-import`**](`https://www.npmjs.com/package/eslint-import-resolver-babel-plugin-root-import`)<br />It requires `babel-plugin-root-import@^5`. but latest version of `babel-plugin-root-import@6` is released.
+    -   [**`eslint-import-resolver-babel-plugin-root-import`**](https://www.npmjs.com/package/eslint-import-resolver-babel-plugin-root-import)<br />It requires `babel-plugin-root-import@^5`. but latest version of `babel-plugin-root-import@6` is released.
 -   [**`babel-plugin-hash-resolve`**](https://www.npmjs.com/package/babel-plugin-hash-resolve)<br />It requires off some option of `eslint-plugin-import`. (e.g. `import/no-unresolved`, `import/extensions`)
 
 ## Installation
