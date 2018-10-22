@@ -2,7 +2,7 @@
 
 A resolver in order to shorten deeply nested relative path expression.
 
-[![Build Status][travis ci badge]][travis ci][![License][licence badge]](LICENSE)[![Package Version][npm package version badge]][npm package]
+[![Build Status][travis ci badge]][travis ci][![License][license badge]](LICENSE)[![Package Version][npm package version badge]][npm package]
 
 ## Table of Contents
 
