@@ -22,13 +22,13 @@ const savedAst = new Promise((resolve, reject) => {
 			reject(error);
 		}
 
-		resolve(data.toString('utf8'));
+		resolve(JSON.parse(data.toString('utf8')));
 	});
 });
 
 describe(`ESLint v${CLIEngine.version}`, () => {
 	it('should lint without an error', () => {
-		const cli = new CLIEngine({ useEslintrc: true });
+		const cli = new CLIEngine({ cwd: examplesPath });
 		const { results } = cli.executeOnFiles([ targetFile ]);
 
 		const totalErrorCount = results
@@ -42,8 +42,8 @@ describe(`ESLint v${CLIEngine.version}`, () => {
 describe(`Babel v${babel.version}`, () => {
 	it('should compile without an error', async () => {
 		const { ast } = await babel.transformFileAsync(targetFile, { root: examplesPath, code: false, ast: true });
-		const builtAst = JSON.stringify(ast, undefined, 4);
+		const builtAst = JSON.parse(JSON.stringify(ast));
 
-		expect(builtAst).to.equal(await savedAst);
+		expect(builtAst).to.deep.equal(await savedAst);
 	});
 });

@@ -10,9 +10,6 @@ before_install:
 install:
   - npm install --no-optional
 
-after_install:
-  - npm audit
-
 script:
   - npm run build:prod
   - npm test
