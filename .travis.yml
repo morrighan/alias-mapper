@@ -10,6 +10,12 @@ env:
 before_install:
   - npm install --global npm
 
+install:
+  - npm install --no-optional
+
+after_install:
+  - npm audit
+
 script:
   - npm run build
   - npm test
