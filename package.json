@@ -2,6 +2,23 @@
     "name": "@epicinium/cognomen",
     "version": "1.0.0-beta.0",
     "description": "A resolver in order to shorten deeply nested relative path expression.",
+    "keywords": [
+        "babel",
+        "babel-plugin",
+        "module",
+        "resolver",
+        "alias",
+        "rewrite",
+        "resolve",
+        "rename",
+        "mapping",
+        "import",
+        "eslint",
+        "eslint-plugin-import",
+        "eslint-import-resolver",
+        "epicinium",
+        "cognomen"
+    ],
     "homepage": "https://github.com/epicinium/cognomen",
     "bugs": {
         "url": "https://github.com/epicinium/cognomen/issues"
