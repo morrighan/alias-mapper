@@ -32,7 +32,10 @@
         "test:eslint": "npx eslint ."
     },
     "dependencies": {
-        "@babel/runtime": "^7.1.2"
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/runtime": "^7.1.2",
+        "js-yaml": "^3.12.0",
+        "json5": "^2.1.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.1.2",
