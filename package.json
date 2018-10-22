@@ -28,8 +28,9 @@
         "postcompile": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run minify:prod; else npm run minify:dev; fi",
         "minify:dev": "find releases -type f -exec sh -c \"npx terser --toplevel --compress --beautify --output {} -- {}\" \\;",
         "minify:prod": "find releases -type f -exec sh -c \"npx terser --toplevel --compress passes=2 --mangle --output {} -- {}\" \\;",
-        "test": "npm run test:eslint",
-        "test:eslint": "npx eslint ."
+        "test": "npm run test:eslint && npm run test:mocha",
+        "test:eslint": "npx eslint .",
+        "test:mocha": "npx mocha tests"
     },
     "dependencies": {
         "@babel/helper-plugin-utils": "^7.0.0",
@@ -47,10 +48,12 @@
         "@babel/preset-env": "^7.1.0",
         "babel-eslint": "^10.0.1",
         "babel-plugin-closure-elimination": "^1.3.0",
+        "chai": "^4.2.0",
         "eslint": "^5.7.0",
         "eslint-config-airbnb-base": "^13.1.0",
         "eslint-plugin-import": "^2.14.0",
         "faster.js": "^1.1.0",
+        "mocha": "^5.2.0",
         "terser": "^3.10.2"
     },
     "engines": {

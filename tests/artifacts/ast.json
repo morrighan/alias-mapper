@@ -1,0 +1,344 @@
+{
+    "type": "File",
+    "start": 0,
+    "end": 147,
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 6,
+            "column": 0
+        }
+    },
+    "program": {
+        "type": "Program",
+        "start": 0,
+        "end": 147,
+        "loc": {
+            "start": {
+                "line": 1,
+                "column": 0
+            },
+            "end": {
+                "line": 6,
+                "column": 0
+            }
+        },
+        "sourceType": "module",
+        "interpreter": null,
+        "body": [
+            {
+                "type": "ImportDeclaration",
+                "start": 0,
+                "end": 25,
+                "loc": {
+                    "start": {
+                        "line": 1,
+                        "column": 0
+                    },
+                    "end": {
+                        "line": 1,
+                        "column": 25
+                    }
+                },
+                "specifiers": [],
+                "source": {
+                    "type": "StringLiteral",
+                    "start": 7,
+                    "end": 24,
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 7
+                        },
+                        "end": {
+                            "line": 1,
+                            "column": 24
+                        }
+                    },
+                    "extra": {
+                        "rawValue": "(common)/logger",
+                        "raw": "'(common)/logger'"
+                    },
+                    "value": "../../../../releases/common/logger.js"
+                }
+            },
+            {
+                "type": "ImportDeclaration",
+                "start": 26,
+                "end": 74,
+                "loc": {
+                    "start": {
+                        "line": 2,
+                        "column": 0
+                    },
+                    "end": {
+                        "line": 2,
+                        "column": 48
+                    }
+                },
+                "specifiers": [
+                    {
+                        "type": "ImportSpecifier",
+                        "start": 35,
+                        "end": 45,
+                        "loc": {
+                            "start": {
+                                "line": 2,
+                                "column": 9
+                            },
+                            "end": {
+                                "line": 2,
+                                "column": 19
+                            }
+                        },
+                        "imported": {
+                            "type": "Identifier",
+                            "start": 35,
+                            "end": 45,
+                            "loc": {
+                                "start": {
+                                    "line": 2,
+                                    "column": 9
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 19
+                                },
+                                "identifierName": "initialize"
+                            },
+                            "name": "initialize"
+                        },
+                        "local": {
+                            "type": "Identifier",
+                            "start": 35,
+                            "end": 45,
+                            "loc": {
+                                "start": {
+                                    "line": 2,
+                                    "column": 9
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 19
+                                },
+                                "identifierName": "initialize"
+                            },
+                            "name": "initialize"
+                        }
+                    }
+                ],
+                "source": {
+                    "type": "StringLiteral",
+                    "start": 53,
+                    "end": 73,
+                    "loc": {
+                        "start": {
+                            "line": 2,
+                            "column": 27
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 47
+                        }
+                    },
+                    "extra": {
+                        "rawValue": "(backend)/database",
+                        "raw": "'(backend)/database'"
+                    },
+                    "value": "../../../../releases/backend/database.js"
+                }
+            },
+            {
+                "type": "ImportDeclaration",
+                "start": 75,
+                "end": 113,
+                "loc": {
+                    "start": {
+                        "line": 3,
+                        "column": 0
+                    },
+                    "end": {
+                        "line": 3,
+                        "column": 38
+                    }
+                },
+                "specifiers": [
+                    {
+                        "type": "ImportDefaultSpecifier",
+                        "start": 82,
+                        "end": 89,
+                        "loc": {
+                            "start": {
+                                "line": 3,
+                                "column": 7
+                            },
+                            "end": {
+                                "line": 3,
+                                "column": 14
+                            }
+                        },
+                        "local": {
+                            "type": "Identifier",
+                            "start": 82,
+                            "end": 89,
+                            "loc": {
+                                "start": {
+                                    "line": 3,
+                                    "column": 7
+                                },
+                                "end": {
+                                    "line": 3,
+                                    "column": 14
+                                },
+                                "identifierName": "Account"
+                            },
+                            "name": "Account"
+                        }
+                    }
+                ],
+                "source": {
+                    "type": "StringLiteral",
+                    "start": 95,
+                    "end": 112,
+                    "loc": {
+                        "start": {
+                            "line": 3,
+                            "column": 20
+                        },
+                        "end": {
+                            "line": 3,
+                            "column": 37
+                        }
+                    },
+                    "extra": {
+                        "rawValue": "(model)/account",
+                        "raw": "'(model)/account'"
+                    },
+                    "value": "../../../../releases/backend/models/account.js"
+                }
+            },
+            {
+                "type": "ExportNamedDeclaration",
+                "start": 115,
+                "end": 146,
+                "loc": {
+                    "start": {
+                        "line": 5,
+                        "column": 0
+                    },
+                    "end": {
+                        "line": 5,
+                        "column": 31
+                    }
+                },
+                "declaration": null,
+                "specifiers": [
+                    {
+                        "type": "ExportSpecifier",
+                        "start": 124,
+                        "end": 131,
+                        "loc": {
+                            "start": {
+                                "line": 5,
+                                "column": 9
+                            },
+                            "end": {
+                                "line": 5,
+                                "column": 16
+                            }
+                        },
+                        "local": {
+                            "type": "Identifier",
+                            "start": 124,
+                            "end": 131,
+                            "loc": {
+                                "start": {
+                                    "line": 5,
+                                    "column": 9
+                                },
+                                "end": {
+                                    "line": 5,
+                                    "column": 16
+                                },
+                                "identifierName": "Account"
+                            },
+                            "name": "Account"
+                        },
+                        "exported": {
+                            "type": "Identifier",
+                            "start": 124,
+                            "end": 131,
+                            "loc": {
+                                "start": {
+                                    "line": 5,
+                                    "column": 9
+                                },
+                                "end": {
+                                    "line": 5,
+                                    "column": 16
+                                },
+                                "identifierName": "Account"
+                            },
+                            "name": "Account"
+                        }
+                    },
+                    {
+                        "type": "ExportSpecifier",
+                        "start": 133,
+                        "end": 143,
+                        "loc": {
+                            "start": {
+                                "line": 5,
+                                "column": 18
+                            },
+                            "end": {
+                                "line": 5,
+                                "column": 28
+                            }
+                        },
+                        "local": {
+                            "type": "Identifier",
+                            "start": 133,
+                            "end": 143,
+                            "loc": {
+                                "start": {
+                                    "line": 5,
+                                    "column": 18
+                                },
+                                "end": {
+                                    "line": 5,
+                                    "column": 28
+                                },
+                                "identifierName": "initialize"
+                            },
+                            "name": "initialize"
+                        },
+                        "exported": {
+                            "type": "Identifier",
+                            "start": 133,
+                            "end": 143,
+                            "loc": {
+                                "start": {
+                                    "line": 5,
+                                    "column": 18
+                                },
+                                "end": {
+                                    "line": 5,
+                                    "column": 28
+                                },
+                                "identifierName": "initialize"
+                            },
+                            "name": "initialize"
+                        }
+                    }
+                ],
+                "source": null
+            }
+        ],
+        "directives": []
+    },
+    "comments": []
+}
