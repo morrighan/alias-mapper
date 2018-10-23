@@ -46,7 +46,7 @@ If `import ... from '(frontend)/application'` expression in `backend/server.js` 
 {
     "plugins": [
         [
-            "@epicinium/cognomen",
+            "module:@epicinium/cognomen",
             {
                 "frontend": "releases/frontend",
                 "backend": "releases/backend"
