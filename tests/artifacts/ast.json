@@ -62,7 +62,7 @@
                         "rawValue": "(common)/logger",
                         "raw": "'(common)/logger'"
                     },
-                    "value": "../../../../releases/common/logger.js"
+                    "value": "../../../../releases/common/logger"
                 }
             },
             {
@@ -148,7 +148,7 @@
                         "rawValue": "(backend)/database",
                         "raw": "'(backend)/database'"
                     },
-                    "value": "../../../../releases/backend/database.js"
+                    "value": "../../../../releases/backend/database"
                 }
             },
             {
@@ -217,7 +217,7 @@
                         "rawValue": "(model)/account",
                         "raw": "'(model)/account'"
                     },
-                    "value": "../../../../releases/backend/models/account.js"
+                    "value": "../../../../releases/backend/models/account"
                 }
             },
             {

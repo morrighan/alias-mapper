@@ -1,7 +1,24 @@
 {
     "name": "@epicinium/cognomen",
-    "version": "1.0.0-beta.0",
+    "version": "1.0.0",
     "description": "A resolver in order to shorten deeply nested relative path expression.",
+    "keywords": [
+        "babel",
+        "babel-plugin",
+        "module",
+        "resolver",
+        "alias",
+        "rewrite",
+        "resolve",
+        "rename",
+        "mapping",
+        "import",
+        "eslint",
+        "eslint-plugin-import",
+        "eslint-import-resolver",
+        "epicinium",
+        "cognomen"
+    ],
     "homepage": "https://github.com/epicinium/cognomen",
     "bugs": {
         "url": "https://github.com/epicinium/cognomen/issues"
@@ -24,13 +41,14 @@
         "build": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run build:prod; else npm run build:dev; fi",
         "build:dev": "NODE_ENV=development npm run compile",
         "build:prod": "NODE_ENV=production npm run compile",
+        "build:watch": "npm run compile -- --watch --verbose",
         "compile": "npx babel sources --out-dir releases --delete-dir-on-start",
         "postcompile": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run minify:prod; else npm run minify:dev; fi",
         "minify:dev": "find releases -type f -exec sh -c \"npx terser --toplevel --compress --beautify --output {} -- {}\" \\;",
         "minify:prod": "find releases -type f -exec sh -c \"npx terser --toplevel --compress passes=2 --mangle --output {} -- {}\" \\;",
         "test": "npm run test:eslint && npm run test:mocha",
         "test:eslint": "npx eslint .",
-        "test:mocha": "npx mocha tests"
+        "test:mocha": "npx mocha tests --reporter list"
     },
     "dependencies": {
         "@babel/helper-plugin-utils": "^7.0.0",
@@ -55,6 +73,11 @@
         "faster.js": "^1.1.0",
         "mocha": "^5.2.0",
         "terser": "^3.10.2"
+    },
+    "peerDependencies": {
+        "@babel/core": "^7.1.2",
+        "eslint": "^5.7.0",
+        "eslint-plugin-import": "^2.14.0"
     },
     "engines": {
         "node": "^8.12.0 || ^10.12.0",

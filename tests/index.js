@@ -22,28 +22,36 @@ const savedAst = new Promise((resolve, reject) => {
 			reject(error);
 		}
 
-		resolve(data.toString('utf8'));
+		resolve(JSON.parse(data.toString('utf8')));
 	});
 });
 
 describe(`ESLint v${CLIEngine.version}`, () => {
 	it('should lint without an error', () => {
-		const cli = new CLIEngine({ useEslintrc: true });
-		const { results } = cli.executeOnFiles([ targetFile ]);
+		const cli = new CLIEngine({ cwd: examplesPath });
+		const { results, errorCount } = cli.executeOnFiles([ targetFile ]);
 
-		const totalErrorCount = results
-			.map(result => result.errorCount + result.warningCount)
-			.reduce((accumulation, errorCount) => accumulation + errorCount, 0);
+		const messages = results
+			.map(({ messages }) => messages)
+			.reduce((concatenated, messages) => concatenated.concat(messages), []);
 
-		expect(totalErrorCount).to.equal(0);
+		if (errorCount > 0) {
+			const refinedMessage = messages
+				.map(({ message, ruleId, line, column }) => `[${ruleId}] ${message} (${line}:${column})`)
+				.join('\n');
+
+			console.error(refinedMessage); // eslint-disable-line no-console
+		}
+
+		expect(messages, 'An error has to be not raised').to.be.empty; // eslint-disable-line no-unused-expressions
 	});
 });
 
 describe(`Babel v${babel.version}`, () => {
 	it('should compile without an error', async () => {
 		const { ast } = await babel.transformFileAsync(targetFile, { root: examplesPath, code: false, ast: true });
-		const builtAst = JSON.stringify(ast, undefined, 4);
+		const builtAst = JSON.parse(JSON.stringify(ast));
 
-		expect(builtAst).to.equal(await savedAst);
+		expect(builtAst, 'The abstract syntax tree does not match').to.deep.equal(await savedAst);
 	});
 });

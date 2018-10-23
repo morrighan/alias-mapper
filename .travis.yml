@@ -4,14 +4,14 @@ node_js:
   - 'lts/carbon'
   - 'node'
 
-env:
-  - NODE_ENV=production
-
 before_install:
   - npm install --global npm
 
+install:
+  - npm install --no-optional
+
 script:
-  - npm run build
+  - npm run build:prod
   - npm test
 
 deploy:

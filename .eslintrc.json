@@ -62,6 +62,12 @@
             }
         ],
         "no-shadow": "off",
-        "no-tabs": "off"
+        "no-tabs": "off",
+        "object-curly-newline": [
+            "error",
+            {
+                "consistent": true
+            }
+        ]
     }
 }
