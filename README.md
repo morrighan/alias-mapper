@@ -83,19 +83,18 @@ ESLint integration has to match to source directories. (e.g. `src`, ...)
 
 ### Visual Studio Code
 
-In Visual Studio Code, all JavaScript files are analyzed by [internal TypeScript language handler][internal typescript language handler]. so, you can just write [`jsconfig.json` file][jsconfig json file] or [`tsconfig.json` for TypeScript project][tsconfig json].
+In Visual Studio Code, all JavaScript files are analyzed by [internal TypeScript language handler][internal typescript language handler]. so, you can just write [`jsconfig.json` file][jsconfig json] or [`tsconfig.json` for TypeScript project][tsconfig json].
 
 ```json
 {
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "(frontend)": "sources/frontend",
-            "(backend)": "sources/backend"
+            "(frontend)/*": "sources/frontend/*",
+            "(backend)/*": "sources/backend/*"
         }
     },
-    "include": ["sources"],
-    "exclude": ["node_modules"]
+    "include": ["sources"]
 }
 ```
 
