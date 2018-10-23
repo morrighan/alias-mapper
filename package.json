@@ -48,7 +48,7 @@
         "minify:prod": "find releases -type f -exec sh -c \"npx terser --toplevel --compress passes=2 --mangle --output {} -- {}\" \\;",
         "test": "npm run test:eslint && npm run test:mocha",
         "test:eslint": "npx eslint .",
-        "test:mocha": "npx mocha tests"
+        "test:mocha": "npx mocha tests --reporter list"
     },
     "dependencies": {
         "@babel/helper-plugin-utils": "^7.0.0",
