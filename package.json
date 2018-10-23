@@ -41,6 +41,7 @@
         "build": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run build:prod; else npm run build:dev; fi",
         "build:dev": "NODE_ENV=development npm run compile",
         "build:prod": "NODE_ENV=production npm run compile",
+        "build:watch": "npm run compile -- --watch --verbose",
         "compile": "npx babel sources --out-dir releases --delete-dir-on-start",
         "postcompile": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run minify:prod; else npm run minify:dev; fi",
         "minify:dev": "find releases -type f -exec sh -c \"npx terser --toplevel --compress --beautify --output {} -- {}\" \\;",
