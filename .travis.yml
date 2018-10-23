@@ -2,7 +2,6 @@ language: node_js
 
 node_js:
   - 'lts/carbon'
-  - 'node'
 
 before_install:
   - npm install --global npm
@@ -22,3 +21,5 @@ deploy:
   on:
     tags: true
     repo: epicinium/cognomen
+    branch: master
+  skip_cleanup: true

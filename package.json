@@ -1,6 +1,6 @@
 {
     "name": "@epicinium/cognomen",
-    "version": "1.0.0",
+    "version": "1.0.0-rc.0",
     "description": "A resolver in order to shorten deeply nested relative path expression.",
     "keywords": [
         "babel",
