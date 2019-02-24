@@ -1,6 +1,6 @@
 {
     "name": "@epicinium/cognomen",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A resolver in order to shorten deeply nested relative path expression.",
     "keywords": [
         "babel",
@@ -75,9 +75,9 @@
         "terser": "^3.16.1"
     },
     "peerDependencies": {
-        "@babel/core": "^7.1.2",
-        "eslint": "^5.7.0",
-        "eslint-plugin-import": "^2.14.0"
+        "@babel/core": "^7.3.3",
+        "eslint": "^5.14.1",
+        "eslint-plugin-import": "^2.16.0"
     },
     "engines": {
         "node": "^10.15.1",
