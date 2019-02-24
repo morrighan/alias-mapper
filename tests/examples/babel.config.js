@@ -7,7 +7,7 @@ const epiciniumCognomen = path.resolve(__dirname, '../../releases/babel.js');
 // Babel configuration.
 const presets = Object.entries({
 	'@babel/preset-env': {
-		targets: { node: 'v8.12.0' },
+		targets: { node: 'v10.15.1' },
 		modules: false
 	}
 });

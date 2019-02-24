@@ -1,6 +1,6 @@
 // Babel configuration.
 const presets = Object.entries({
-	'@babel/preset-env': { targets: { node: 'v8.12.0' } }
+	'@babel/preset-env': { targets: { node: 'v10.15.1' } }
 });
 
 const plugins = Object.entries({
@@ -8,7 +8,6 @@ const plugins = Object.entries({
 	'@babel/plugin-proposal-export-default-from': {},
 	'@babel/plugin-proposal-export-namespace-from': {},
 	'babel-plugin-closure-elimination': {},
-	'module:faster.js': {},
 	'@babel/plugin-transform-runtime': { regenerator: false }
 });
 
