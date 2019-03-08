@@ -37,9 +37,7 @@ export function resolve(originalPath, mentionedBy) {
 				continue;
 			}
 
-			const bloatedPath = path.relative(referencePath, matchTo + originalPath.slice(aliasAs.length));
-
-			return resolveAsNode(bloatedPath, mentionedBy, nodeOptions);
+			return resolveAsNode(matchTo + originalPath.slice(aliasAs.length), mentionedBy, nodeOptions);
 		}
 	}
 
