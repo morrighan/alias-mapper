@@ -2,14 +2,11 @@
 import path from 'path';
 
 // Third-party modules.
-import { sync as glob } from 'glob';
+import { resolve as resolveAsNode } from 'eslint-import-resolver-node';
 
 // Internal helpers.
-import findOptions from './helpers/options-finder';
+import findOptions, { findNodeResolverOptions } from './helpers/options-finder';
 import mapOptionsToAliases from './helpers/options-to-aliases-mapper';
-
-// Constants.
-const jsAwarePattern = /^.(?:[jt]sx?|json\d?|node)$/i;
 
 /**
  * @param {string} originalPath
@@ -21,31 +18,28 @@ export function resolve(originalPath, mentionedBy) {
 		return { found: false };
 	}
 
-	for (const [ options, configuredDirectory ] of findOptions(path.dirname(mentionedBy))) {
+	const referencePath = path.dirname(mentionedBy);
+
+	for (const [ options, configuredDirectory ] of findOptions(referencePath)) {
+		const nodeOptionsCandidates = [ ...findNodeResolverOptions(referencePath) ];
+
+		if (
+			nodeOptionsCandidates.length > 0
+			&& nodeOptionsCandidates.every(options => options[1] !== configuredDirectory)
+		) {
+			continue;
+		}
+
+		const nodeOptions = nodeOptionsCandidates.find(options => options[1] === configuredDirectory)[0] || {};
+
 		for (const [ aliasAs, matchTo ] of mapOptionsToAliases(options, configuredDirectory)) {
 			if (!originalPath.startsWith(aliasAs)) {
 				continue;
 			}
 
-			const bloatedPath = matchTo + originalPath.slice(aliasAs.length);
+			const bloatedPath = path.relative(referencePath, matchTo + originalPath.slice(aliasAs.length));
 
-			try {
-				return { found: true, path: require.resolve(bloatedPath) };
-			} catch {} // eslint-disable-line no-empty
-
-			const patternedPath = path.format({
-				dir: path.dirname(bloatedPath),
-				name: path.basename(bloatedPath),
-				ext: '.*'
-			});
-
-			const [ foundPath ] = glob(patternedPath).filter(target => jsAwarePattern.test(path.extname(target)));
-
-			if (typeof foundPath !== 'string') {
-				continue;
-			}
-
-			return { found: true, path: foundPath };
+			return resolveAsNode(bloatedPath, mentionedBy, nodeOptions);
 		}
 	}
 
