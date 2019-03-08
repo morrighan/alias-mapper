@@ -10,6 +10,10 @@ const resolvers = {
 		common: 'sources/common',
 		backend: 'sources/backend',
 		model: 'sources/backend/models'
+	},
+
+	node: {
+		extensions: [ '.js', '.ts', '.json' ]
 	}
 };
 

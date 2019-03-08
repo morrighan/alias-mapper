@@ -10,8 +10,18 @@ import loadESLintConfiguration from './eslintrc-loader';
 const candidates = [ '.eslintrc.js', '.eslintrc.yaml', '.eslintrc.yml', '.eslintrc.json', '.eslintrc' ];
 const internalResolverPath = path.resolve(__dirname, '../eslint.js');
 
+// Caches.
+const pathCaches = new Map();
+const resolverCaches = new Map();
+
 // Partial helpers.
 function* findPathOfOptions(targetPath) {
+	if (pathCaches.has(targetPath)) {
+		yield* pathCaches.get(targetPath);
+	}
+
+	const cache = [];
+
 	for (const reference of traverseDirectories(targetPath)) {
 		const optionsPath = candidates.map(candidate => path.resolve(reference, candidate)).find(fs.existsSync);
 
@@ -33,30 +43,62 @@ function* findPathOfOptions(targetPath) {
 			continue;
 		}
 
+		cache.push(packagePath);
+
 		yield packagePath;
 	}
+
+	pathCaches.set(targetPath, cache);
 }
 
-export default function* findOptions(targetPath) {
+function* findResolverOptions(targetPath) {
+	if (resolverCaches.has(targetPath)) {
+		yield* resolverCaches.get(targetPath);
+	}
+
+	const cache = [];
+
 	for (const optionsPath of findPathOfOptions(targetPath)) {
 		const configuredDirectory = path.dirname(optionsPath);
 		const { root, settings: { 'import/resolver': resolvers = {} } = {} } = loadESLintConfiguration(optionsPath);
 
-		for (const [ resolver, options ] of Object.entries(resolvers)) {
-			if (
-				!resolver.endsWith('@epicinium/cognomen')
-				&& !(path.isAbsolute(resolver)
-					? resolver
-					: path.resolve(path.dirname(optionsPath), resolver) === internalResolverPath)
-			) {
-				continue;
-			}
+		for (const resolverEntry of Object.entries(resolvers)) {
+			const options = [ ...resolverEntry, configuredDirectory, optionsPath ];
 
-			yield [ options, configuredDirectory ];
+			cache.push(options);
+
+			yield options;
 		}
 
 		if (root === true) {
 			break;
 		}
+	}
+
+	resolverCaches.set(targetPath, cache);
+}
+
+export function* findNodeResolverOptions(targetPath) {
+	for (const [ resolver, options, configuredDirectory ] of findResolverOptions(targetPath)) {
+		if (!/(?:eslint-import-resolver-)?node$/.test(resolver)) {
+			continue;
+		}
+
+		yield [ options, configuredDirectory ];
+	}
+}
+
+export default function* findOptions(targetPath) {
+	for (const [ resolver, options, configuredDirectory, optionsPath ] of findResolverOptions(targetPath)) {
+		if (
+			!resolver.endsWith('@epicinium/cognomen')
+				&& !(path.isAbsolute(resolver)
+					? resolver
+					: path.resolve(path.dirname(optionsPath), resolver) === internalResolverPath)
+		) {
+			continue;
+		}
+
+		yield [ options, configuredDirectory ];
 	}
 }
