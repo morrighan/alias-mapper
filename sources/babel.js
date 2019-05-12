@@ -22,7 +22,7 @@ const replace = (node, state, options, configuredDirectory) => {
 
 		const bloatedPath = matchTo + originalPath.slice(aliasAs.length);
 
-		node.source.value = path.relative(mentionedBy, bloatedPath); // eslint-disable-line no-param-reassign
+		node.source.value = path.join('.', path.relative(mentionedBy, bloatedPath)); // eslint-disable-line no-param-reassign
 
 		break;
 	}
