@@ -1,6 +1,6 @@
 {
     "name": "@epicinium/cognomen",
-    "version": "1.3.1",
+    "version": "1.4.0",
     "description": "A resolver in order to shorten deeply nested relative path expression.",
     "keywords": [
         "babel",
@@ -51,38 +51,36 @@
         "test:mocha": "npx mocha tests --reporter list"
     },
     "dependencies": {
-        "@babel/helper-plugin-utils": "^7.0.0",
-        "@babel/runtime": "^7.7.4",
-        "eslint-import-resolver-node": "^0.3.2",
+        "@babel/helper-plugin-utils": "^7.8.0",
+        "@babel/runtime": "^7.8.0",
+        "eslint-import-resolver-node": "^0.3.3",
         "glob": "^7.1.6",
         "js-yaml": "^3.13.1",
         "json5": "^2.1.1"
     },
     "devDependencies": {
-        "@babel/cli": "^7.7.4",
-        "@babel/core": "^7.7.4",
-        "@babel/plugin-proposal-export-default-from": "^7.7.4",
-        "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
-        "@babel/plugin-proposal-optional-catch-binding": "^7.7.4",
-        "@babel/plugin-transform-runtime": "^7.7.4",
-        "@babel/preset-env": "^7.7.4",
+        "@babel/cli": "^7.8.0",
+        "@babel/core": "^7.8.0",
+        "@babel/plugin-proposal-export-default-from": "^7.8.0",
+        "@babel/plugin-proposal-export-namespace-from": "^7.8.0",
+        "@babel/plugin-transform-runtime": "^7.8.0",
+        "@babel/preset-env": "^7.8.0",
         "babel-eslint": "^10.0.3",
-        "babel-plugin-closure-elimination": "^1.3.0",
         "chai": "^4.2.0",
-        "eslint": "^6.7.2",
+        "eslint": "^6.8.0",
         "eslint-config-airbnb-base": "^14.0.0",
-        "eslint-plugin-import": "^2.18.2",
-        "mocha": "^6.2.2",
-        "terser": "^4.4.2"
+        "eslint-plugin-import": "^2.20.0",
+        "mocha": "^7.0.0",
+        "terser": "^4.6.2"
     },
     "peerDependencies": {
-        "@babel/core": "^7.7.2",
-        "eslint": "^6.6.0",
-        "eslint-plugin-import": "^2.18.2"
+        "@babel/core": "^7.8.0",
+        "eslint": "^6.8.0",
+        "eslint-plugin-import": "^2.20.0"
     },
     "engines": {
-        "node": "^10.15.3",
-        "npm": "^6.9.0"
+        "node": "^12.14.1",
+        "npm": "^6.13.4"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
