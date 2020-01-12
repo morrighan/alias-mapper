@@ -17,4 +17,7 @@ const resolvers = {
 	}
 };
 
-module.exports = { settings: { 'import/resolver': resolvers } };
+module.exports = {
+	rules: { 'import/extensions': [ 'error', 'never' ] },
+	settings: { 'import/resolver': resolvers }
+};

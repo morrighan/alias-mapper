@@ -53,5 +53,8 @@ describe(`Babel v${babel.version}`, () => {
 		const builtAst = JSON.parse(JSON.stringify(ast));
 
 		expect(builtAst, 'The abstract syntax tree does not match').to.deep.equal(await savedAst);
+
+		// For detouring asynchronous resolution timeout.
+		return undefined;
 	});
 });
