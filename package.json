@@ -1,6 +1,6 @@
 {
     "name": "@epicinium/cognomen",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "A resolver in order to shorten deeply nested relative path expression.",
     "keywords": [
         "babel",
@@ -51,36 +51,36 @@
         "test:mocha": "npx mocha tests --reporter list"
     },
     "dependencies": {
-        "@babel/helper-plugin-utils": "^7.8.0",
-        "@babel/runtime": "^7.8.0",
-        "eslint-import-resolver-node": "^0.3.3",
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/runtime": "^7.11.2",
+        "eslint-import-resolver-node": "^0.3.4",
         "glob": "^7.1.6",
-        "js-yaml": "^3.13.1",
-        "json5": "^2.1.1"
+        "js-yaml": "^3.14.0",
+        "json5": "^2.1.3"
     },
     "devDependencies": {
-        "@babel/cli": "^7.8.0",
-        "@babel/core": "^7.8.0",
-        "@babel/plugin-proposal-export-default-from": "^7.8.0",
-        "@babel/plugin-proposal-export-namespace-from": "^7.8.0",
-        "@babel/plugin-transform-runtime": "^7.8.0",
-        "@babel/preset-env": "^7.8.0",
-        "babel-eslint": "^10.0.3",
+        "@babel/cli": "^7.11.5",
+        "@babel/core": "^7.11.5",
+        "@babel/plugin-proposal-export-default-from": "^7.10.4",
+        "@babel/plugin-proposal-export-namespace-from": "^7.10.4",
+        "@babel/plugin-transform-runtime": "^7.11.5",
+        "@babel/preset-env": "^7.11.5",
+        "babel-eslint": "^10.1.0",
         "chai": "^4.2.0",
-        "eslint": "^6.8.0",
-        "eslint-config-airbnb-base": "^14.0.0",
-        "eslint-plugin-import": "^2.20.0",
-        "mocha": "^7.0.0",
-        "terser": "^4.6.2"
+        "eslint": "^7.8.1",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-import": "^2.22.0",
+        "mocha": "^8.1.3",
+        "terser": "^5.2.1"
     },
     "peerDependencies": {
-        "@babel/core": "^7.8.0",
-        "eslint": "^6.8.0",
-        "eslint-plugin-import": "^2.20.0"
+        "@babel/core": "^7.11.5",
+        "eslint": "^7.8.1",
+        "eslint-plugin-import": "^2.22.0"
     },
     "engines": {
-        "node": "^12.14.1",
-        "npm": "^6.13.4"
+        "node": "^12.14.3",
+        "npm": "^6.14.8"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
