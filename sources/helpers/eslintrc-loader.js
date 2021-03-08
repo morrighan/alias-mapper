@@ -23,7 +23,7 @@ export default function loadESLintConfiguration(targetPath) {
 		const unparsedConfiguration = fs.readFileSync(targetPath, { encoding: 'utf8' });
 
 		if (fileExtension === '.yaml' || fileExtension === '.yml') {
-			configuration = YAML.safeLoad(unparsedConfiguration);
+			configuration = YAML.load(unparsedConfiguration);
 		} else if (fileExtension === '.json') {
 			configuration = JSON.parse(unparsedConfiguration);
 
@@ -32,7 +32,7 @@ export default function loadESLintConfiguration(targetPath) {
 			}
 		} else {
 			try {
-				configuration = YAML.safeLoad(unparsedConfiguration);
+				configuration = YAML.load(unparsedConfiguration);
 			} catch {
 				configuration = JSON.parse(unparsedConfiguration);
 			}
