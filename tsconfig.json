@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "noEmit": true,
+        "strict": true,
+        "allowJs": true,
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "typeRoots": [
+            "node_modules/@types",
+            "sources/typings"
+        ]
+    },
+    "exclude": [
+        "releases"
+    ]
+}

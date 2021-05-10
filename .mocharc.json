@@ -1,0 +1,8 @@
+{
+    "extension": [
+        "ts"
+    ],
+    "require": "tests/helpers/register.js",
+    "spec": "tests/*.ts",
+    "timeout": 5000
+}
