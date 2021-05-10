@@ -1,5 +1,6 @@
 import '(common)/logger';
 import { initialize } from '(backend)/database';
-import Account from '(model)/account';
+import Account from '(models)/account';
+import '(components)/checkbox';
 
 export { Account, initialize };

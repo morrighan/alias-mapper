@@ -1,12 +1,24 @@
-// Babel configuration.
-const presets = Object.entries({
-	'@babel/preset-env': { targets: { node: 'v12.14.1' } }
-});
+/**
+ * @param {import('@babel/core').ConfigAPI} API
+ * @returns {import('@babel/core').TransformOptions}
+ */
+function configurateBabel(API) {
+    API.assertVersion('^7.14.0');
+    API.cache.forever();
 
-const plugins = Object.entries({
-	'@babel/plugin-proposal-export-default-from': {},
-	'@babel/plugin-proposal-export-namespace-from': {},
-	'@babel/plugin-transform-runtime': { regenerator: false }
-});
+    // Configuration fragments.
+    const corejs = { version: 3, proposals: true };
 
-module.exports = { presets, plugins };
+    const presets = Object.entries({
+        '@babel/preset-env': { bugfixes: true, useBuiltIns: 'usage', targets: { node: 'current' }, corejs },
+        '@babel/preset-typescript': {}
+    });
+
+    const plugins = Object.entries({
+        '@babel/plugin-transform-runtime': { regenerator: false, corejs }
+    });
+
+    return { presets, plugins };
+}
+
+module.exports = configurateBabel;

@@ -2,24 +2,42 @@
 const path = require('path');
 
 // Constants.
-const epiciniumCognomen = path.resolve(__dirname, '../../releases/babel.js');
+const aliasMapper = path.resolve(__dirname, '../../releases/babel.js');
 
-// Babel configuration.
-const presets = Object.entries({
-	'@babel/preset-env': {
-		targets: { node: 'v12.14.1' },
-		modules: false
-	}
-});
+/**
+ * @param {import('@babel/core').ConfigAPI} API
+ * @returns {import('@babel/core').TransformOptions}
+ */
+function configurateBabel(API) {
+    API.assertVersion('^7.14.0');
+    API.cache.forever();
 
-const plugins = Object.entries({
-	[epiciniumCognomen]: {
-		common: 'releases/common',
-		backend: 'releases/backend',
-		model: 'releases/backend/models'
-	},
+	// Configuration fragments.
+    const corejs = { version: 3, proposals: true };
 
-	'@babel/plugin-transform-runtime': { regenerator: false }
-});
+    const presets = Object.entries({
+		'@babel/preset-env': { bugfixes: true, useBuiltIns: 'usage', targets: { node: 'current' }, modules: false, corejs }
+	});
 
-module.exports = { presets, plugins };
+	const plugins = Object.entries({
+		[aliasMapper]: {
+			basePath: __dirname,
+
+			rootDirs: [
+				'sources/frontend',
+			],
+
+			aliases: {
+				common: 'sources/common',
+				backend: 'sources/backend',
+				models: 'sources/backend/models'
+			},
+		},
+
+		'@babel/plugin-transform-runtime': { regenerator: false, corejs }
+	});
+
+    return { presets, plugins };
+}
+
+module.exports = configurateBabel;

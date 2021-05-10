@@ -3,6 +3,7 @@
 
 # Configuration files for development
 babel.config.js
+tsconfig.json
 
 # Source contents
 sources
