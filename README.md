@@ -1,4 +1,4 @@
-# @epicinium/cognomen
+# @cichol/alias-mapper
 
 A resolver in order to shorten deeply nested relative path expression.
 
@@ -6,18 +6,17 @@ A resolver in order to shorten deeply nested relative path expression.
 
 ## Table of Contents
 
-- [@epicinium/cognomen](#epiciniumcognomen)
-    - [Table of Contents](#table-of-contents)
-    - [Motivation](#motivation)
-        - [Prior Art](#prior-art)
-    - [Installation](#installation)
-    - [Integration](#integration)
-        - [Babel](#babel)
-        - [ESLint](#eslint)
-        - [Visual Studio Code](#visual-studio-code)
-    - [Usage](#usage)
-    - [Trivia](#trivia)
-    - [License](#license)
+- [@cichol/alias-mapper](#cicholalias-mapper)
+  - [Table of Contents](#table-of-contents)
+  - [Motivation](#motivation)
+    - [Prior Art](#prior-art)
+  - [Installation](#installation)
+  - [Integration](#integration)
+    - [Babel](#babel)
+    - [ESLint](#eslint)
+    - [Visual Studio Code](#visual-studio-code)
+  - [Usage](#usage)
+  - [License](#license)
 
 ## Motivation
 
@@ -33,7 +32,7 @@ In monorepo structure or complex directory hierarchy, we used to exhausted by de
 ## Installation
 
 ```sh
-$ npm install --save-dev @epicinium/cognomen
+$ npm install --save-dev @cichol/alias-mapper
 ```
 
 ## Integration
@@ -46,10 +45,14 @@ If `import ... from '(frontend)/application'` expression in `backend/server.js` 
 {
     "plugins": [
         [
-            "module:@epicinium/cognomen",
+            "module:@cichol/alias-mapper",
             {
-                "frontend": "releases/frontend",
-                "backend": "releases/backend"
+                "rootDirs": [
+                    "sources"
+                ],
+                "aliases" {
+                    "models": "sources/backend/models"
+                }
             }
         ]
     ]
@@ -68,9 +71,13 @@ If you want to integrate with ESLint, you have to ensure [`eslint-plugin-import`
 {
     "settings": {
         "import/resolver": {
-            "@epicinium/cognomen": {
-                "frontend": "sources/frontend",
-                "backend": "sources/backend"
+            "@cichol/alias-mapper": {
+                "rootDirs": [
+                    "sources"
+                ],
+                "aliases" {
+                    "models": "sources/backend/models"
+                }
             }
         }
     }
@@ -91,7 +98,8 @@ In Visual Studio Code, all JavaScript files are analyzed by [internal TypeScript
         "baseUrl": ".",
         "paths": {
             "(frontend)/*": "sources/frontend/*",
-            "(backend)/*": "sources/backend/*"
+            "(backend)/*": "sources/backend/*",
+            "(models)/*": "sources/backend/models/*"
         }
     },
     "include": ["sources"]
@@ -116,19 +124,15 @@ After the integration process, you can write code with aliased scopes. an alias 
 + import logger from '(common)/logger';
 ```
 
-## Trivia
-
-**cognomen** means **alias name** or **nickname** in the Latin Language
-
 ## License
 
 [MIT Licensed](LICENSE).
 
-[travis ci badge]: https://img.shields.io/travis/com/epicinium/cognomen/develop.svg?style=flat-square
-[travis ci]: https://travis-ci.com/epicinium/cognomen
-[license badge]: https://img.shields.io/github/license/epicinium/cognomen.svg?style=flat-square
-[npm package version badge]: https://img.shields.io/npm/v/@epicinium/cognomen.svg?style=flat-square
-[npm package]: https://www.npmjs.com/package/@epicinium/cognomen
+[travis ci badge]: https://img.shields.io/travis/com/morrighan/alias-mapper/develop.svg?style=flat-square
+[travis ci]: https://travis-ci.com/morrighan/alias-mapper
+[license badge]: https://img.shields.io/github/license/morrighan/alias-mapper.svg?style=flat-square
+[npm package version badge]: https://img.shields.io/npm/v/@morrighan/alias-mapper.svg?style=flat-square
+[npm package]: https://www.npmjs.com/package/@morrighan/alias-mapper
 [babel plugin module resolver]: https://www.npmjs.com/package/babel-plugin-module-resolver
 [babel plugin root import]: https://www.npmjs.com/package/babel-plugin-root-import
 [eslint import resolver babel plugin root import]: https://www.npmjs.com/package/eslint-import-resolver-babel-plugin-root-import
