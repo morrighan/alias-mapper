@@ -4,5 +4,5 @@
     ],
     "require": "tests/helpers/register.js",
     "spec": "tests/*.ts",
-    "timeout": 5000
+    "timeout": 10000
 }
