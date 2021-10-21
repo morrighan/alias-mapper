@@ -2,7 +2,7 @@
 
 A resolver in order to shorten deeply nested relative path expression.
 
-[![Build Status][travis ci badge]][travis ci][![License][license badge]](LICENSE)[![Package Version][npm package version badge]][npm package]
+[![Build Status][github actions badge]][github actions][![License][license badge]](LICENSE)[![Package Version][npm package version badge]][npm package]
 
 ## Table of Contents
 
@@ -128,11 +128,11 @@ After the integration process, you can write code with aliased scopes. an alias 
 
 [MIT Licensed](LICENSE).
 
-[travis ci badge]: https://img.shields.io/travis/com/morrighan/alias-mapper/develop.svg?style=flat-square
-[travis ci]: https://travis-ci.com/morrighan/alias-mapper
+[github actions badge]: https://img.shields.io/github/workflow/status/morrighan/alias-mapper/On%20default/develop?style=flat-square
+[github actions]: https://github.com/morrighan/alias-mapper/actions
 [license badge]: https://img.shields.io/github/license/morrighan/alias-mapper.svg?style=flat-square
-[npm package version badge]: https://img.shields.io/npm/v/@morrighan/alias-mapper.svg?style=flat-square
-[npm package]: https://www.npmjs.com/package/@morrighan/alias-mapper
+[npm package version badge]: https://img.shields.io/npm/v/@cichol/alias-mapper.svg?style=flat-square
+[npm package]: https://www.npmjs.com/package/@cichol/alias-mapper
 [babel plugin module resolver]: https://www.npmjs.com/package/babel-plugin-module-resolver
 [babel plugin root import]: https://www.npmjs.com/package/babel-plugin-root-import
 [eslint import resolver babel plugin root import]: https://www.npmjs.com/package/eslint-import-resolver-babel-plugin-root-import

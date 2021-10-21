@@ -1,6 +1,6 @@
 {
     "name": "@cichol/alias-mapper",
-    "version": "1.5.0",
+    "version": "1.5.1",
     "description": "A resolver in order to shorten deeply nested relative path expression.",
     "keywords": [
         "babel",
@@ -50,40 +50,40 @@
         "test:mocha": "npx mocha tests --reporter list"
     },
     "dependencies": {
-        "@babel/helper-plugin-utils": "^7.13.0",
-        "@babel/runtime-corejs3": "^7.14.0",
-        "core-js": "^3.12.1",
-        "eslint-import-resolver-node": "^0.3.4",
+        "@babel/helper-plugin-utils": "^7.14.5",
+        "@babel/runtime-corejs3": "^7.15.4",
+        "core-js": "^3.18.3",
+        "eslint-import-resolver-node": "^0.3.6",
         "lodash": "^4.17.21"
     },
     "devDependencies": {
-        "@babel/cli": "^7.13.16",
-        "@babel/core": "^7.14.0",
-        "@babel/plugin-transform-runtime": "^7.13.15",
-        "@babel/preset-env": "^7.14.1",
-        "@babel/preset-typescript": "^7.13.0",
-        "@babel/register": "^7.13.16",
-        "@babel/types": "^7.14.1",
-        "@cichol/eslint-config": "^3.0.1",
+        "@babel/cli": "^7.15.7",
+        "@babel/core": "^7.15.8",
+        "@babel/plugin-transform-runtime": "^7.15.8",
+        "@babel/preset-env": "^7.15.8",
+        "@babel/preset-typescript": "^7.15.0",
+        "@babel/register": "^7.15.3",
+        "@babel/types": "^7.15.6",
+        "@cichol/eslint-config": "^3.0.6",
         "@types/babel__helper-plugin-utils": "^7.10.0",
-        "@types/chai": "^4.2.18",
-        "@types/eslint": "^7.2.10",
-        "@types/lodash": "^4.14.168",
-        "@types/mocha": "^8.2.2",
-        "@types/node": "^14.14.44",
+        "@types/chai": "^4.2.22",
+        "@types/eslint": "^7.28.1",
+        "@types/lodash": "^4.14.176",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "^16.11.2",
         "chai": "^4.3.4",
-        "eslint": "^7.26.0",
-        "mocha": "^8.4.0",
-        "terser": "^5.7.0",
-        "typescript": "^4.2.4"
+        "eslint": "^7.32.0",
+        "mocha": "^9.1.3",
+        "terser": "^5.9.0",
+        "typescript": "^4.4.4"
     },
     "peerDependencies": {
-        "@babel/core": "^7.14.0",
-        "eslint": "^7.26.0"
+        "@babel/core": "^7.15.8",
+        "eslint": "^7.32.0"
     },
     "engines": {
-        "node": "^14.16.0 || ^16",
-        "npm": "^7.12.0"
+        "node": "^14.18.1 || ^16.12.0",
+        "npm": "^8.1.0"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
